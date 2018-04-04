@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   ex10();
 
+
   function ex11() {
 
     function toC(f) {
@@ -192,8 +193,72 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ex11();
 
+  function ex12() {
+    console.log("current website:" + location.href);
+  }
+  // ex12();
 
 
+  function ex14(fileName) {
+    console.log(fileName.split('.').pop());
+    // or
+    var file = fileName.split('.');
+    console.log(file[file.length - 1]);
+
+
+
+  };
+  // ex14("app.js");
+
+  function ex15(ynr) {
+
+    if(ynr > 13) {
+      return 2 * (ynr - 13);
+    } else {
+      return 13 - ynr;
+    };
+  }
+
+  // console.log(ex15(-13));
+
+  function ex16(a, b) {
+
+    if(a === b) {
+      return 3 * (a + b);
+    } else {
+      return a + b;
+    }
+
+  };
+
+  // console.log(ex16(0, Infinity));
+  function ex17(num) {
+    return(num <= 19) ? (19 - num) : (3 * (num - 19));
+  }
+
+  // console.log(ex17(21));
+
+  function ex18(a, b) {
+    return((a + b == 50) || (a == 50) || (b == 50));
+  }
+  // console.log(ex18(0, 50));
+
+  function ex19(a) {
+    return((Math.abs(100 - a) <= 20) || (Math.abs(400 - a) <= 20))
+  }
+
+  // console.log(ex19(80));
+
+  function ex20(a, b) {
+
+    if(((a > 0) && (b < 0)) || ((b > 0) && (a < 0))) {
+      return true
+    } else {
+      return false;
+    }
+
+  };
+  // console.log(ex20(-1, 1));
 
 
 
