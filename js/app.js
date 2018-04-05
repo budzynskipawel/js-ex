@@ -260,6 +260,86 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   // console.log(ex20(-1, 1));
 
+  function ex21(str) {
+    console.log("ex21");
 
+    if(str.substring(0, 2) === 'Py' || str === null || str === undefined) {
+      return str;
+    } else {
+      return "Py" + str;
+    }
+  }
+
+  // console.log(ex21("python"));
+
+  function ex22(word, i) {
+    var fir = word.substr(0, i);
+    var sec = word.substr(i + 1, word.length - 1);
+    return word = fir + sec;
+
+  };
+
+  // console.log(ex22('John Doe', 3));
+  function ex23(word) {
+    if(((typeof word) == 'string') && (word.length >= 1)) {
+      return word.charAt(word.length - 1) + word.substring(1, word.length - 1) + word.charAt(0)
+    } else {
+      return "fatal error";
+    }
+  }
+
+  // console.log(ex23("John Doe"));
+
+  function ex24(word) {
+    if(typeof word == "string") {
+      return word.charAt(0) + word + word.charAt(0);
+    } else {
+      return "not a string"
+    }
+
+  };
+
+  // console.log(ex24("152900"));
+
+  function ex25(a) {
+    return((a > 0) && ((a % 3 === 0) || (a % 7 === 0))) ? true : false;
+  };
+
+  // console.log(ex25(7));
+
+  function ex26(str) {
+    var last3 = str.substr(str.length - 3, str.length);
+
+    return last3 + str + last3;
+  };
+
+  // console.log(ex26('teścik'));
+
+  function ex27(str) {
+    return(str.substring(0, 4) === "Java") ? true : false;
+  };
+
+  // console.log(ex27("JavaScript"));
+
+  function ex28(a, b) {
+
+    return((a >= 50 && a <= 99) && (b >= 50 && b <= 99)) ? true : false;
+
+  };
+
+  // console.log(ex28(99, 50));
+
+  function ex29(a, b, c) {
+    return((a >= 50 && a <= 99) || (b >= 50 && b <= 99) || (c >= 50 && c <= 99)) ? true : false;
+  };
+
+  // console.log(ex29(50, 1, 1));
+
+  function ex30(str) {
+
+
+    return(str.substr(4, 6) === "Script") ? (str.substr(0, 4) + str.substr(10, str.length - 1)) : str;
+  };
+  console.log(ex30("JavaScript"));
 
 })
