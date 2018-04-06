@@ -456,6 +456,52 @@ document.addEventListener("DOMContentLoaded", function() {
   function ex40(a, b) {
     return((a === 8) || (b === 8) || (a + b === 8) || Math.abs(a - b) === 8);
   }
-  console.log(ex40(0, '8'));
+  // console.log(ex40(0, '8'));
 
+  function ex41(a, b, c) {
+    if((a === b) && (a === c)) {
+      return 30;
+    } else if((a === b) || (a === c) || (b === c)) {
+      return 20;
+
+    } else {
+      return 40;
+    }
+  };
+  // console.log(ex41(2, 2, 2));
+
+  function ex42(a, b, c) {
+    if((c > b) && (b > a)) {
+      return 'strict mode';
+    } else if(c > b) {
+      return 'soft mode';
+    }
+
+  }
+  // console.log(ex42(22, 2, 3));
+
+  function ex43(x, y, z) {
+    if((x >= 0) && (y >= 0) && (z >= 0)) {
+      return((x % 10 === y % 10) || (x % 10 === z % 10) || (z % 10 === y % 10));
+
+    } else {
+      return 'error';
+    }
+
+  };
+  // console.log(ex43(32, 3331, 33333333232));
+
+  function ex44(a, b, c) {
+    return((a >= 20) && ((a < b) || (a < c))) || ((b >= 20) && ((b < a) || (b < c))) ||
+      ((c >= 20) && ((c < a) || (c < b)))
+  };
+
+  // console.log(ex44(22, 3, 3));
+
+  function ex45(a, b) {
+
+    return((a === 15) || (b == 15)) || ((a + b == 15) || (Math.abs(a - b) === 15))
+  };
+
+  console.log(ex45(24, 39));
 })
