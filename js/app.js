@@ -340,6 +340,122 @@ document.addEventListener("DOMContentLoaded", function() {
 
     return(str.substr(4, 6) === "Script") ? (str.substr(0, 4) + str.substr(10, str.length - 1)) : str;
   };
-  console.log(ex30("JavaScript"));
+  // console.log(ex30("JavaScript"));
+
+  function ex31(a, b, c) {
+    var max;
+    if(a > b) {
+      max = a;
+    } else {
+      max = b;
+    };
+
+    if(c > b) {
+      max = c;
+    }
+    return max
+  };
+  // console.log(ex31(2, 2, 2));
+
+  function ex32(a, b) {
+
+    if(Math.abs(100 - a) < Math.abs(100 - b)) {
+      return a
+    } else {
+      return b;
+    }
+  }
+  // console.log(ex32(112, 102));
+
+  function ex33(a, b) {
+    if((((a >= 40) && (a <= 60)) || ((a >= 70) && (a <= 100))) && (((b >= 40) && (b <= 60)) || ((b >= 70) && (b <= 100)))) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  // console.log(ex33(43, 83));
+
+  function ex34(a, b) {
+
+    if(((a <= 60) && (b <= 60)) && ((a >= 40) && (b >= 40))) {
+      return Math.max(a, b);
+    } else {
+      return false;
+    }
+  };
+
+  // console.log(ex34(20, 40));
+
+  function ex35(str, char) {
+    var noOfChars = 0;
+    for(var i = 0; i <= str.length - 1; i++) {
+      if(str.charAt(i) == char) {
+        noOfChars++;
+      }
+    };
+    return(noOfChars >= 2) && (noOfChars <= 4);
+
+  };
+  // console.log(ex35("jjjjjojoba", "j"));
+
+  function ex36(a, b, c) {
+
+    if((a > 0) && (b > 0) && (c > 0)) {
+      if((a % 10 === b % 10) && (a % 10 === c % 10) && (b % 10 === c % 10)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return "give positive numbers"
+    }
+  };
+
+  // console.log(ex36(0, 21, 31));
+
+  function ex37(newString) {
+
+    if(newString.length < 3) {
+      return newString.toUpperCase();
+    } else {
+      return newString.substring(0, 3).toLowerCase() + newString.substring(3, newString.length)
+    };
+
+  };
+
+  // console.log(ex37('sl'));
+
+  function ex38(marks, exam) {
+
+    if(exam === "final") {
+      if(marks >= 90 && marks <= 100) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      if(marks >= 89 && marks <= 100) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+
+  };
+  // console.log(ex38(79, "final"));
+
+  function ex39(a, b) {
+    return((a + b >= 50) && (a + b <= 80)) ? 65 : 80;
+
+  };
+
+  // console.log(ex39(30, 51));
+
+  function ex40(a, b) {
+    return((a === 8) || (b === 8) || (a + b === 8) || Math.abs(a - b) === 8);
+  }
+  console.log(ex40(0, '8'));
 
 })
