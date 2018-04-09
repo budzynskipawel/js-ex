@@ -503,5 +503,212 @@ document.addEventListener("DOMContentLoaded", function() {
     return((a === 15) || (b == 15)) || ((a + b == 15) || (Math.abs(a - b) === 15))
   };
 
-  console.log(ex45(24, 39));
+  // console.log(ex45(24, 39));
+  function ex46(a, b) {
+    if(a >= 0 && b >= 0) {
+      if(((a % 7 === 0) || (a % 11 === 0)) && ((b % 7 === 0) || (b % 11 === 0))) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  // console.log(ex46(22, 70));
+  function ex48(str) {
+    var newStr = '';
+    for(var i = str.length - 1; i >= 0; i--) {
+      newStr += str.charAt(i);
+    };
+    return newStr;
+  };
+  // console.log(ex48('janek'));
+
+  function ex49(str) {
+    var newStr = '';
+    for(var i = 0; i < str.length; i++) {
+      newStr += String.fromCharCode(str[i].charCodeAt() + 1);
+
+    };
+
+    return newStr;
+  };
+  // console.log(ex49('abcd'));
+
+  function ex50(str) {
+    var a = str.split(" ");
+    for(var i = 0; i < a.length; i++) {
+      a[i] = a[i][0].toUpperCase() + a[i].substring(1);
+    };
+
+    return a.join(" ");
+
+  };
+  // console.log(ex50("super cool exercise"));
+
+  function ex51(a) {
+    return Math.floor(a / 60) + " hours, " + (a % 60) + " minutes";
+  };
+
+  // console.log(ex51(20));
+
+  function ex52(str) {
+    return str.split('').sort();
+  };
+
+  // console.log(ex52('jancio'));
+
+  function ex53(str) {
+    return(/a...b/.test(str)) || (/b...a/.test(str));
+  };
+
+  // console.log(ex53('aoooba'));
+
+  function ex54(str) {
+    return str.replace(/[^aeiou]/g, "").length;
+  };
+  // console.log(ex54('jajajoja'));
+
+  function ex55(str) {
+    return str.replace(/[^p]/g, "").length === str.replace(/[^t]/g, "").length;
+  };
+
+  function ex56(a, b) {
+    var c = a / b;
+    return c.toString().replace(/\./g, ",");
+  };
+
+  // console.log(ex56(3, 2));
+
+  function ex57(str, a) {
+    var newStr = str;
+    if(a < 1) {
+      return false;
+    } else {
+      // for(var i = 1; i < a; i++) {
+      //   newStr += str;
+      // };
+      newStr = str.repeat(a);
+    }
+
+
+    return newStr;
+  }
+  // console.log(ex57("raz ", 3));
+
+  function ex58(str) {
+    if(str.length < 3) {
+      return false;
+    } else {
+      return str.substr(str.length - 3).repeat(4);
+    };
+  }
+  // console.log(ex58('jajko'));
+
+  function ex59(str) {
+    if(str.length % 2 !== 0) {
+      return false;
+    } else {
+      return str.substr(0, str.length / 2);
+    }
+  };
+  // console.log(ex59('jajoja'));
+
+  function ex60(str) {
+    return str.substring(1, str.length - 1);
+  };
+  // console.log(ex60('Alt-Hohenschoenhausen'));
+
+  function ex61(a, b) {
+
+    return a.substr(1) + b.substr(1);
+
+  };
+
+  // console.log(ex61("yayo", "mayo"));
+
+  function ex62(str) {
+    return str.substr(str.length - 3) + str.substr(0, str.length - 3);
+  };
+
+  // console.log(ex62("Aschaffenburg"));
+
+  function ex63(str) {
+    return str.substr((Math.floor(str.length / 2) - 1), 3);
+  };
+
+  // console.log(ex63('0123456'));
+
+  function ex64(a, b) {
+    var m = Math.min(a.length, b.length);
+    return a.substr(0, m) + b.substr(0, m);
+
+  };
+  // console.log(ex64('ja', 'nein'));
+
+  function ex65(str) {
+    if(str.length < 6) {
+      return false;
+    } else {
+      return str.indexOf("Script") === str.length - 6;
+    }
+  };
+
+  // console.log(ex65('JohnDoeScript'));
+
+  function ex66(str) {
+    var a = str.substr(0, 3);
+    if(a === "Los" || a === "New") {
+      return str;
+    } else {
+      return 'blank';
+    }
+  };
+  // console.log(ex66("Los Angeles"));
+
+  function ex67(str) {
+    var start = 0;
+    var stop = str.length;
+    if(str.charAt(0) === "P") {
+      start++;
+    };
+    if(str.charAt(stop - 1) === "P") {
+      stop--;
+    };
+    return str.substring(start, stop);
+  }
+  // console.log(ex67('PPPPP'));
+
+  function ex68(str, n) {
+
+    if(str.length < n) {
+      return false;
+    } else {
+      return str.substr(0, n) + str.substr(str.length - n, n);
+    }
+
+  };
+
+  // console.log(ex68("Hafnarfjordur", 1));
+
+  function ex69(arr) {
+    var sum = 0;
+    for(var i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum;
+
+  };
+  // console.log(ex69([1, 3, 5.6]));
+
+  function ex70(arr) {
+    var newArr = [];
+    for(var i = 0; i < arr.length - 1; i++) {
+      newArr[i] = arr[i + 1]
+    };
+    newArr[arr.length - 1] = arr[0];
+    return newArr;
+  };
+  // console.log(ex70([1, 2, 3, 5, 2123, 2]));
+
+
 })
