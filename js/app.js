@@ -711,4 +711,53 @@ document.addEventListener("DOMContentLoaded", function() {
   // console.log(ex70([1, 2, 3, 5, 2123, 2]));
 
 
+
+  function ex71(arr) {
+    if(arr.length === 0) {
+      return false;
+    } else if(arr[0] === 1 || arr[arr.length - 1] === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  // console.log(ex71([2, 1, 1]));
+
+  function ex72(arr) {
+    return(arr[0] === arr[arr.length - 1]) ? true : false;
+  };
+
+  // console.log(ex72([1, 2, 1]));
+
+  function ex73(arr) {
+    return arr.reverse();
+  };
+
+  // console.log(ex73([1, 2, 3]));
+
+  function ex74(arr) {
+
+    var larger = Math.max(arr[0], arr[arr.length - 1]);
+    for(var i = 0; i < arr.length; i++) {
+      arr[i] = larger;
+    };
+
+
+    return arr;
+
+
+  };
+
+  // console.log(ex74([1, 2, 3, 2 * 2]));
+
+  function ex75(arr1, arr2) {
+
+    if(arr1.length !== 3 && arr2.length !== 3) {
+      return false;
+    } else {
+      return [arr1[1], arr2[1]];
+    }
+
+  };
+  console.log(ex75([1, 2, 3], [4, 5, 6]));
 })
