@@ -759,5 +759,259 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
   };
-  console.log(ex75([1, 2, 3], [4, 5, 6]));
+  // console.log(ex75([1, 2, 3], [4, 5, 6]));
+
+  function ex76(arr) {
+    if(arr.length >= 1) {
+      return [arr[0], arr[arr.length - 1]];
+    } else {
+      return false;
+    }
+  };
+  // console.log(ex76([1, 2, 32]));
+
+  function ex77(arr) {
+    return((arr.indexOf(1) > -1) || (arr.indexOf(3) > -1)) && arr.length === 2;
+  };
+  // console.log(ex77([2, 3, 1]));
+
+  function ex78(arr) {
+    return((arr.indexOf(1) === -1) && (arr.indexOf(3) === -1)) && arr.length === 2;
+  };
+  // console.log(ex78([2, 4]));
+
+  function ex80(arr) {
+
+    if(arr.length > 0) {
+      [arr[0], arr[1], arr[arr.length - 1]] = [arr[arr.length - 1], 'test',
+        arr[0]
+      ];
+
+      return arr;
+    } else {
+      return false;
+    }
+
+
+
+  };
+  // console.log(ex80([1, 2, 3, 4, 5, 6]));
+
+  function ex81(a) {
+    if(a > 9 && a < 100) {
+      return Math.floor(a / 10) + (a % 10);
+    } else {
+      return false;
+    }
+  };
+  // console.log(ex81(33));
+
+  function ex82(a, b) {
+
+    return 10 * (Math.floor(a / 10) + Math.floor(b / 10));
+
+  };
+
+
+  // console.log(ex82(101, 122));
+
+  function ex83(arr) {
+    var longest = '';
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i].length > longest.length) {
+        longest = arr[i];
+      };
+    };
+    return longest;
+  };
+
+  // console.log(ex83(['one', 'two', 'three', 'four']));
+
+  function ex84(str) {
+    var newStr = '';
+    for(var i = 0; i < str.length; i++) {
+      if(str.charAt(i) === 'z') {
+        newStr += 'a';
+      } else if(str.charAt(i) === 'Z') {
+        newStr += 'A';
+      } else {
+        newStr += String.fromCharCode(str.charCodeAt(i) + 1);
+      };
+    };
+    return newStr;
+  };
+  // console.log(ex84('zZaAbcdBCD123.,-'));
+
+  function ex85(arr) {
+    var even = [];
+    var odd = [];
+    var sumEven = 0;
+    var sumOdd = 0;
+
+    for(var i = 0; i < arr.length; i++) {
+      if(i % 2) {
+        odd.push(arr[i]);
+        sumOdd += arr[i];
+      } else {
+        even.push(arr[i]);
+        sumEven += arr[i];
+      };
+
+    };
+    return "even elements: " + even + " sum: " + sumEven + " odd elements: " + odd + " sum: " + sumOdd;
+
+
+
+  };
+  // console.log(ex85([0, 1, 2, 3, 4, 5, 6, 152900, 123, 1300, 146]));
+
+  function ex86(a) {
+    if(a > 0 && a < 90) {
+      return 'acute angle';
+    } else if(a === 90) {
+      return 'right angle';
+    } else if(a > 90 && a < 180) {
+      return 'obtuse angle';
+    } else if(a === 180) {
+      return 'straight angle';
+    } else {
+      return 'more than 180'
+    };
+  };
+  // console.log(ex86(118));
+
+  function ex87(arr1, arr2) {
+    var count = 0;
+    if(arr1.length !== arr2.length) {
+      return false;
+
+    } else {
+      for(var i = 0; i < arr1.length; i++) {
+        if(arr1[i] !== arr2[i]) {
+          count++;
+        }
+      }
+    };
+    return(count < 2) ? true : false;
+
+  };
+  // console.log(ex87([2, 3, 3], [1, 2, 3]));
+
+  function ex88(a, b, c) {
+    return((a % c === 0 && b % c === 0) || (a % c !== 0 && b % c !== 0))
+  };
+
+  // console.log(ex88(4, 2, 2));
+
+  function ex90(arr, k) {
+    arr.sort(function(a, b) {
+      return b - a;
+    });
+    if(arr.length >= k) {
+      return arr[k - 1]
+    } else {
+      return false;
+    }
+
+  };
+
+  // console.log(ex90([7, 2, 0], 3));
+
+  function ex91(arr, k) {
+    var greatest = 0;
+    if(k <= arr.length) {
+      for(var i = 0; i <= arr.length - k; i++) {
+        var sum = 0;
+
+        for(var j = i; j < i + k; j++) {
+          sum += arr[j];
+        };
+
+        if(sum > greatest) {
+          greatest = sum;
+        }
+
+      };
+      return greatest;
+    } else {
+      return false;
+    }
+  };
+  // console.log(ex91([14, 2, 3, 4, 5, 6, 7], 4));
+
+  function ex92(arr) {
+    var dif = 0;
+    var greatest = 0;
+    for(var i = 1; i < arr.length; i++) {
+      dif = Math.abs(arr[i] - arr[i - 1]);
+      if(dif > greatest) {
+        greatest = dif;
+      }
+    };
+    return greatest;
+  };
+  // console.log(ex92([-9991, 200, 4, 123, 4550]));
+
+  function ex93(arr) {
+    var max = 0;
+    var dif = 0;
+    for(var i = 0; i < arr.length; i++) {
+      for(var j = 0; j < arr.length; j++) {
+        max = Math.max(Math.abs(arr[i] - arr[j]), max);
+
+      }
+    };
+    return max;
+  };
+  // console.log(ex93([1, 12441, 2, -2, 345]));
+
+  function ex94(arr) {
+
+    var tor = -1;
+    var gr;
+    for(var i = 0; i < arr.length; i++) {
+      var count = -1;
+      for(var j = 0; j < arr.length; j++) {
+        if(arr[i] === arr[j]) {
+          count++;
+
+        };
+        if(count > tor) {
+          tor = count;
+          gr = arr[j];
+        }
+
+      }
+
+    }
+    return gr;
+  }
+  // console.log(ex94([1, 2, 3, 4, 4, 3, 3, 4, 5, 4]));
+
+  function ex95(arr, old, rep) {
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i] === old) {
+        newArr.push(rep);
+      } else {
+        newArr.push(arr[i]);
+      };
+
+
+    };
+    return "original:" + arr + " new: " + newArr;
+  }
+
+  // console.log(ex95([2, 3, 4, 5, 6, 3, 7, 8], 3, 9));
+
+  function ex96(arr) {
+    var sum = 0;
+    for(var i = 1; i < arr.length; i++) {
+      sum += Math.abs(arr[i] - arr[i - 1]);
+    };
+    return sum;
+  };
+
+  // console.log(ex96([1, 2, 3, 229, -271]));
+
 })
