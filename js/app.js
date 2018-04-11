@@ -1014,4 +1014,83 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // console.log(ex96([1, 2, 3, 229, -271]));
 
-})
+  function ex98(arr) {
+    var upper = 0;
+    var lower = 0;
+    for(var i = 0; i < arr.length; i++) {
+      if(/[A-Z]/.test(arr[i])) {
+        upper++;
+      } else {
+        lower++;
+      }
+
+    };
+    if(lower > upper) {
+      return arr.toLowerCase();
+
+    } else {
+      return arr.toUpperCase();
+    }
+  };
+
+  // console.log(ex98("DONstefanOOOOO"));
+
+  function ex99(str1, str2) {
+
+    var a = str1.toString().split("").sort();
+    var b = str2.toString().split("").sort();
+
+    return(a === b) ? true : false;
+  };
+
+  function ex100(arr1, arr2) {
+    var is = false;
+    for(var i = 0; i < arr1.length; i++) {
+      for(var j = 0; j < arr2.length; j++) {
+        if(arr1[i] === arr2[j]) {
+          is = true;
+        };
+      };
+
+    };
+
+    return is;
+  };
+  // console.log(ex100([1, 2, 3], [7, 4, 5]));
+
+  function ex103(a) {
+    var b = a.toString().split('');
+    var max = 0;
+    for(var i = 0; i < b.length; i++) {
+      var newNr = [];
+      for(var j = 0; j < b.length; j++) {
+        if(i !== j) {
+          newNr.push(b[j]);
+        }
+
+      }
+      // console.log(newNr.join(""))
+      max = Math.max(newNr.join(""), max);
+
+
+    }
+    console.log(max);
+    // console.log(b);
+  };
+
+  // ex103(900095);
+  function ex106(a, b) {
+    var c = a / b;
+
+
+
+    while(Number.isInteger(c)) {
+      c = c / b;
+      console.log(c)
+    };
+    // console.log(c);
+
+
+  };
+  ex106(32, 2);
+});
