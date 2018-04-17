@@ -1092,5 +1092,91 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   };
-  ex106(32, 2);
+  // ex106(32, 2);
+
+  function ex107(arr) {
+    var count = 0;
+    var sorted = arr.sort(function(a, b) {
+      return b - a;
+    });
+
+    for(var i = 0; i < sorted.length - 1; i++) {
+      for(var j = i + 1; j < sorted.length; j++) {
+        if(sorted[i] % sorted[j] === 0) {
+          count++;
+          console.log(sorted[i], sorted[j]);
+
+        }
+      }
+    }
+    return count;
+  };
+
+  function ex108(a, b) {
+    var result = 0;
+    if(a.length === b.length) {
+      for(var i = 0; i < a.length; i++) {
+        result += a[i] * b[i];
+      }
+    };
+    return result;
+  };
+  // console.log(ex108([1, 2, 3], [1, 2, 3]));
+
+  function ex109(n) {
+    var arr = [];
+
+    for(var i = 2; i <= n; i++) {
+      var count = 0;
+      for(var j = i; j > 0; j--) {
+        if(i % j === 0) {
+          count++
+
+        };
+
+      };
+      if(count < 3) {
+        arr.push(i);
+      }
+    };
+    return arr;
+  };
+
+  // console.log(ex109(99));
+
+  function ex110(arr, n) {
+    count = 0;
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i] % 2 === 0 && arr[i] !== n) {
+        count++
+      };
+      if(arr[i] === n) {
+        return count;
+        break;
+      }
+    }
+  };
+  // console.log(ex110([1, 4, 6, 1, 4, -6, 1, 1, 2, 4], 2));
+
+  function ex111(a, b, c) {
+    if(a !== b && b !== c && c !== a) {
+      return 'numbers are not equal'
+    } else if(a == b) {
+      return c;
+    } else if(a == c) {
+      return b;
+    } else {
+      return a;
+    }
+  };
+  // console.log(ex111(1, 2, 1));
+
+  function ex114(sent) {
+    a = sent.split('');
+    return(/[A-Z]/g.test(a[0]) && a[a.length - 1] === '.');
+  };
+  // console.log(ex114("Hello World."));
+
+
+
 });
